@@ -4,12 +4,13 @@
 #include<iostream>
 #include<string>
 #include<fstream>
+#include<vector>
 using namespace std;
 
 class clsBankClient : public clsPerson
 {
 private:
-	enum enmode {empty , update};
+	enum enmode { empty, update, nclint };
 	enmode _mode = enmode::empty;
 	string _Account_Number;
 	string _Bin_Code;
@@ -85,6 +86,15 @@ private:
 		_update_file_data(vec,file_n);
 	}
 
+	void _add_new_clint_to_file(string filen)
+	{
+		fstream file;
+		file.open(filen, ios::app);
+		if (file.is_open())
+		{
+			file << endl << _convert_obj_to_text(*this);
+		}
+	}
 
 public:
 	clsBankClient(enmode mode , string account_number, string pin_code, double balance, string first_name, string last_name, string phone, string email) :clsPerson(first_name, last_name, phone, email)
@@ -195,22 +205,38 @@ public:
 		return (!clint.is_empty());
 	}
 
-	enum ensavemode { saved, unsaved };
+	enum ensavemode { saved, unsaved,newclint };
 
 	ensavemode save(string file_n)
 	{
 		switch (_mode)
 		{
 		case enmode::empty:
+		{
 			return ensavemode::unsaved;
 			break;
-		case enmode::update:
-			{
-				_update(file_n);
-				return ensavemode::saved;
-				break;
-			}
 		}
+		case enmode::update:
+		{
+			_update(file_n);
+			return ensavemode::saved;
+			break;
+		}
+
+		case enmode::nclint:
+		{
+			_add_new_clint_to_file(file_n);
+			return ensavemode::newclint;
+			break;
+		}
+		return ensavemode::unsaved;
+
+		}
+	}
+
+	static clsBankClient new_clint(string account_num)
+	{
+		return (clsBankClient(enmode::nclint, account_num, "", 0, "", "", "", ""));
 	}
 };
 
