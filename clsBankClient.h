@@ -15,6 +15,7 @@ private:
 	string _Account_Number;
 	string _Bin_Code;
 	double _Balance;
+	bool _mark_to_delet=false;
 
 	static clsBankClient _convert_text_to_object(string text,string sp="//")
 	{
@@ -29,7 +30,7 @@ private:
 		return clsBankClient (_enmode::empty,"", "", 0, "", "", "", "");
 	}
 
-	vector<clsBankClient>_Load_clint_data_from_file(string file_n)
+	vector<clsBankClient>_Load_clints_data_from_file(string file_n)
 	{
 		vector<clsBankClient>vec;
 		string text;
@@ -39,6 +40,8 @@ private:
 		{
 			while (getline(file, text))
 			{
+				if (text.empty())
+					continue;
 				vec.push_back(_convert_text_to_object(text));
 			}
 		}
@@ -59,7 +62,7 @@ private:
 		return s;
 	}
 
-	void _update_file_data(vector<clsBankClient>vec,string file_n)
+	void _load_clints_to_file(vector<clsBankClient>vec,string file_n)
 	{
 		fstream file;
 		file.open(file_n, ios::out);
@@ -67,7 +70,10 @@ private:
 		{
 			for (clsBankClient clint : vec)
 			{
-				file << _convert_obj_to_text(clint) << endl;
+				if (!clint._mark_to_delet)
+				{
+					file << _convert_obj_to_text(clint) << endl;
+				}
 			}
 		}
 		file.close();
@@ -75,7 +81,7 @@ private:
 
 	void _update(string file_n)
 	{
-		vector<clsBankClient>vec = _Load_clint_data_from_file(file_n);
+		vector<clsBankClient>vec = _Load_clints_data_from_file(file_n);
 		for (clsBankClient& clint : vec)
 		{
 			if (clint.get_account_number() == _Account_Number)
@@ -83,7 +89,7 @@ private:
 				clint = *this;
 			}
 		}
-		_update_file_data(vec,file_n);
+		_load_clints_to_file(vec,file_n);
 	}
 
 	void _add_new_clint_to_file(string filen)
@@ -92,7 +98,7 @@ private:
 		file.open(filen, ios::app);
 		if (file.is_open())
 		{
-			file << endl << _convert_obj_to_text(*this);
+			file << _convert_obj_to_text(*this) << endl;
 		}
 	}
 
@@ -238,6 +244,21 @@ public:
 	static clsBankClient new_clint(string account_num)
 	{
 		return (clsBankClient(_enmode::newclint, account_num, "", 0, "", "", "", ""));
+	}
+
+	void Delete()
+	{
+		vector<clsBankClient>clints = _Load_clints_data_from_file("file.txt");
+		for (clsBankClient& clint : clints)
+		{
+			if (clint.get_account_number() == _Account_Number)
+			{
+				clint._mark_to_delet = true;
+				break;
+			}
+		}
+		_load_clints_to_file(clints, "file.txt");
+		*this = _empty_obj();
 	}
 };
 

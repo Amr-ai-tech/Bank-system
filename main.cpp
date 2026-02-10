@@ -54,6 +54,19 @@ string read_new_account_num()
 	return account_num;
 }
 
+string read_account_num()
+{
+	string account_num;
+	cout << " enter account number " << endl;
+	getline(cin, account_num);
+	while (!clsBankClient::is_clint_exist(account_num, "file.txt"))
+	{
+		cout << "this account is not exist,enter the account number agian" << endl;
+		account_num = clsInput_valid::Read_String();
+	}
+	return account_num;
+}
+
 void add_new_clint()
 {
 	string account_num = read_new_account_num();
@@ -65,14 +78,7 @@ void add_new_clint()
 
 void update_clint()
 {
-	string account_num;
-	cout << " enter account number " << endl;
-	getline(cin,account_num);
-	while (!clsBankClient::is_clint_exist(account_num, "file.txt"))
-	{
-		cout << "this account is not exist,enter the account number agian" << endl;
-		account_num = clsInput_valid::Read_String();
-	}
+	string account_num = read_account_num();
 	clsBankClient clint = clsBankClient::find("file.txt", account_num);
 	clint.Print();
 	cout << "\n\n-------------------update clint--------------------\n\n";
@@ -81,7 +87,27 @@ void update_clint()
 	clint.Print();
 }
 
+void delet_clint()
+{
+	string account_num = read_account_num();
+	clsBankClient clint = clsBankClient::find("file.txt", account_num);
+	clint.Print();
+	cout << "Are you sure you want to Delete this account ? y/n\n";
+	char answar;
+	cin >> answar;
+	if (answar == 'y' || answar == 'Y')
+	{
+		clint.Delete();
+		cout << "\nthe clint has been deleted \n";
+	}
+	else
+	{
+		cout << "\nthe clint has not been deleted\n";
+	}
+	clint.Print();
+}
+
 int main()
 {
-	update_clint();
+	delet_clint();
 }
