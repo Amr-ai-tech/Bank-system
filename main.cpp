@@ -36,7 +36,7 @@ void saving_chick(clsBankClient::ensavemode save)
 		cout << "\nerror, unsaved" << endl;
 		break;
 
-	case clsBankClient::ensavemode::newclint:
+	case clsBankClient::ensavemode::newclintadded:
 		cout << "\nthe new clint has been added" << endl;
 		break;
 	}
@@ -83,5 +83,5 @@ void update_clint()
 
 int main()
 {
-	add_new_clint();
+	update_clint();
 }

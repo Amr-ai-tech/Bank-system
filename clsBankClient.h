@@ -10,8 +10,8 @@ using namespace std;
 class clsBankClient : public clsPerson
 {
 private:
-	enum enmode { empty, update, nclint };
-	enmode _mode = enmode::empty;
+	enum _enmode { empty, update, newclint };
+	_enmode _mode = _enmode::empty;
 	string _Account_Number;
 	string _Bin_Code;
 	double _Balance;
@@ -20,13 +20,13 @@ private:
 	{
 		vector<string>data;
 		data = clsString::Split(text, sp);
-		return (clsBankClient(enmode::update,data[4], data[5], stod(data[6]) , data[0], data[1], data[2], data[3]));
+		return (clsBankClient(_enmode::update,data[4], data[5], stod(data[6]) , data[0], data[1], data[2], data[3]));
 
 	}
 
 	static clsBankClient _empty_obj()
 	{
-		return clsBankClient (enmode::empty,"", "", 0, "", "", "", "");
+		return clsBankClient (_enmode::empty,"", "", 0, "", "", "", "");
 	}
 
 	vector<clsBankClient>_Load_clint_data_from_file(string file_n)
@@ -97,7 +97,7 @@ private:
 	}
 
 public:
-	clsBankClient(enmode mode , string account_number, string pin_code, double balance, string first_name, string last_name, string phone, string email) :clsPerson(first_name, last_name, phone, email)
+	clsBankClient(_enmode mode , string account_number, string pin_code, double balance, string first_name, string last_name, string phone, string email) :clsPerson(first_name, last_name, phone, email)
 	{
 		_mode = mode;
 		_Account_Number = account_number;
@@ -152,12 +152,12 @@ public:
 
 	bool is_empty()
 	{
-		return (_mode == enmode::empty);
+		return (_mode == _enmode::empty);
 	}
 
 	static clsBankClient find(string filen,string account_num)
 	{
-		clsBankClient clint(enmode::empty,"","",0,"","","","");
+		clsBankClient clint(_enmode::empty,"","",0,"","","","");
 		string text;
 		fstream file;
 		file.open(filen, ios::in);
@@ -179,7 +179,7 @@ public:
 
 	static clsBankClient find(string filen, string account_num, string pinc)
 	{
-		clsBankClient clint(enmode::empty, "", "", 0, "", "", "", "");
+		clsBankClient clint(_enmode::empty, "", "", 0, "", "", "", "");
 		string text;
 		fstream file;
 		file.open(filen, ios::in);
@@ -205,28 +205,29 @@ public:
 		return (!clint.is_empty());
 	}
 
-	enum ensavemode { saved, unsaved,newclint };
+	enum ensavemode { saved, unsaved,newclintadded };
 
 	ensavemode save(string file_n)
 	{
 		switch (_mode)
 		{
-		case enmode::empty:
+		case _enmode::empty:
 		{
 			return ensavemode::unsaved;
 			break;
 		}
-		case enmode::update:
+		case _enmode::update:
 		{
 			_update(file_n);
 			return ensavemode::saved;
 			break;
 		}
 
-		case enmode::nclint:
+		case _enmode::newclint:
 		{
 			_add_new_clint_to_file(file_n);
-			return ensavemode::newclint;
+			_mode = _enmode::update;
+			return ensavemode::newclintadded;
 			break;
 		}
 		return ensavemode::unsaved;
@@ -236,7 +237,7 @@ public:
 
 	static clsBankClient new_clint(string account_num)
 	{
-		return (clsBankClient(enmode::nclint, account_num, "", 0, "", "", "", ""));
+		return (clsBankClient(_enmode::newclint, account_num, "", 0, "", "", "", ""));
 	}
 };
 
