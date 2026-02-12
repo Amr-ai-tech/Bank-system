@@ -30,7 +30,7 @@ private:
 		return clsBankClient (_enmode::empty,"", "", 0, "", "", "", "");
 	}
 
-	vector<clsBankClient>_Load_clints_data_from_file(string file_n)
+	vector<clsBankClient>_Load_clints_from_file(string file_n)
 	{
 		vector<clsBankClient>vec;
 		string text;
@@ -81,7 +81,7 @@ private:
 
 	void _update(string file_n)
 	{
-		vector<clsBankClient>vec = _Load_clints_data_from_file(file_n);
+		vector<clsBankClient>vec = _Load_clints_from_file(file_n);
 		for (clsBankClient& clint : vec)
 		{
 			if (clint.get_account_number() == _Account_Number)
@@ -248,7 +248,7 @@ public:
 
 	void Delete()
 	{
-		vector<clsBankClient>clints = _Load_clints_data_from_file("file.txt");
+		vector<clsBankClient>clints = _Load_clints_from_file("file.txt");
 		for (clsBankClient& clint : clints)
 		{
 			if (clint.get_account_number() == _Account_Number)
