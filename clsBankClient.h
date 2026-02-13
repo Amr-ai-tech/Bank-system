@@ -236,7 +236,6 @@ public:
 			return ensavemode::newclintadded;
 			break;
 		}
-		return ensavemode::unsaved;
 
 		}
 	}
