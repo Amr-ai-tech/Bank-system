@@ -30,7 +30,7 @@ private:
 		return clsBankClient (_enmode::empty,"", "", 0, "", "", "", "");
 	}
 
-	vector<clsBankClient>_Load_clints_from_file(string file_n)
+	static vector<clsBankClient>_Load_clints_from_file(string file_n)
 	{
 		vector<clsBankClient>vec;
 		string text;
@@ -258,6 +258,22 @@ public:
 		}
 		_load_clints_to_file(clints, "file.txt");
 		*this = _empty_obj();
+	}
+
+	static vector<clsBankClient> get_clints(string file_name)
+	{
+		return _Load_clints_from_file(file_name);
+	}
+
+	static double total_balnce(string file_name)
+	{ 
+		vector<clsBankClient>clints = _Load_clints_from_file(file_name);
+		double t_b=0.0;
+		for (clsBankClient clint : clints)
+		{
+			t_b += clint.balance;
+		}
+		return t_b;
 	}
 };
 

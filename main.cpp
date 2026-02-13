@@ -3,6 +3,8 @@
 #include<fstream>
 #include"clsBankClient.h"
 #include"clsInput_valid.h"
+#include"Utility.h"
+#include<iomanip>
 using namespace std;
 
 void read_clint_data(clsBankClient& clint)
@@ -107,7 +109,60 @@ void delet_clint()
 	clint.Print();
 }
 
+void print_clints_data(clsBankClient clint)
+{
+	cout << "|" << setw(16) << left << clint.get_account_number() << " | " << setw(16) << left << clint.Full_Name() << " | " << setw(14) << left << clint.Phone << " | " << setw(20) << left << clint.Email << " | " << setw(12) << left << clint.pin_code << " | " << clint.balance << endl;
+}
+
+void print_clints_balnce(clsBankClient clint)
+{
+	cout << "|" << setw(29) << left << clint.get_account_number() << " | " << setw(28) << left << clint.Full_Name() << " | " << setw(24) << left << clint.balance << endl;
+
+}
+
+void clint_list(string file_name)
+{
+	vector<clsBankClient>list = clsBankClient::get_clints(file_name);
+	cout << "\n\t\t\t\t\t\tclint list ( " << list.size() << "(s) )\n" << endl;
+	cout << "-----------------------------------------------------------------------------------------------------------------" << endl;
+	cout << setw(17) << left << "Account number " << " | " << setw(16) << left << "Clint name " << " | " << setw(14) << left << "Phone " << " | " << setw(20) << left << "Email " << " | " << setw(12) << left << "Pin code " << " | " << "Balance " << endl;
+	cout << "------------------------------------------------------------------------------------------------------------------" << endl;
+	if (list.size() > 0)
+	{
+		for (clsBankClient clint : list)
+		{
+			print_clints_data(clint);
+		}
+	}
+	else
+		cout << "\n\t\t\t\t\t\tthere is no clint :)" << endl;
+	cout << "-----------------------------------------------------------------------------------------------------------------" << endl;
+}
+
+void Balance_list(string file_name)
+{
+	double total_balnce = clsBankClient::total_balnce("file.txt");
+	vector<clsBankClient>list = clsBankClient::get_clints(file_name);
+	cout << "\n\t\t\t\t\tBalance list \n" << endl;
+	cout << "------------------------------------------------------------------------------------------" << endl;
+	cout << setw(30) << left << "Account number " << " | " << setw(28) << left << "Clint name " << " | " << setw(24) << left << "Balance " << endl;
+	cout << "------------------------------------------------------------------------------------------" << endl;
+	if (list.size() > 0)
+	{
+		for (clsBankClient clint : list)
+		{
+			print_clints_balnce(clint);
+		}
+	}
+	else
+		cout << "\n\t\t\t\tthere is no clint :)" << endl;
+	cout << "------------------------------------------------------------------------------------------\n" << endl;
+	cout << "\t\t\t\t\tTotal Balance is : " << total_balnce <<"  |  " << Utility::Number_To_Text(total_balnce) << endl;
+}
+
 int main()
 {
-	delet_clint();
+	//add_new_clint();
+	Balance_list("file.txt");
+
 }
