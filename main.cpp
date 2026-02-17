@@ -5,6 +5,7 @@
 #include"clsInput_valid.h"
 #include"Utility.h"
 #include<iomanip>
+#include"clsMainScrean.h"
 using namespace std;
 
 void read_clint_data(clsBankClient& clint)
@@ -162,7 +163,5 @@ void Balance_list(string file_name)
 
 int main()
 {
-	//add_new_clint();
-	Balance_list("file.txt");
-
+	clsMainScrean::main_meneu();
 }
