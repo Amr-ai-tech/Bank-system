@@ -32,5 +32,14 @@
     <ClInclude Include="clsScrean.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="clsClintsListScrean.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="clsAddNewClintScrean.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="clsBankOprations.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

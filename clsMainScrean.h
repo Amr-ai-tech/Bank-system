@@ -3,6 +3,8 @@
 #include<iomanip>
 #include"clsScrean.h"
 #include"clsInput_valid.h"
+#include"clsClintsListScrean.h"
+#include"clsAddNewClintScrean.h"
 using namespace std;
 class clsMainScrean:protected clsScrean
 {
@@ -22,6 +24,7 @@ private:
 	
 	static void _return_to_mainmaneu()
 	{
+		cout << "\n\n\n";
 		cout << "\t\t\t\t\tclick in any button to back to main maneu" << endl;
 		system("pause>0");
 		main_meneu();
@@ -29,12 +32,12 @@ private:
 
 	static void _show_clint_list()
 	{
-		cout << "code here" << endl;
+		clsClintsListScrean::show_clint_list();
 	}
 
 	static void _add_new_clint()
 	{
-		cout << "code here" << endl;
+		clsAddNewClintScrean::show_add_new_clint();
 	}
 
 	static void _delete_clint()
@@ -136,7 +139,7 @@ public:
 	{                 
 		system("cls");
 		screan_head("main maneu");
-		cout << setw(37) << left << "\t\t\t====================================================" << endl;
+		cout << setw(37) << left << "\t\t\t\t====================================================" << endl;
 		cout << setw(37) << left << "\t\t\t\t\t\t    main meneu\n";
 		cout << setw(37) << left << "\t\t====================================================" << endl;
 		cout << setw(37) << left << "\t\t\t\t\t\t[1] Show clint list " << endl;

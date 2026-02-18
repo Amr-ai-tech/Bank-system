@@ -6,12 +6,17 @@ using namespace std;
 
 class clsScrean
 {
-public:
-	static void screan_head(string title)
+protected:
+	static void screan_head(string title, string SubTitle = "")
 	{
-		cout << setw(37) << left << "\n\t\t\t\t\t\t------------------\n";
-		cout << setw(37) << left << "\t" << title << endl;
-		cout << setw(37) << left << "\t\t\t\t\t\t------------------\n";
+
+        cout << "\t\t\t\t\t______________________________________";
+        cout << "\n\n\t\t\t\t\t\t     " << title;
+        if (SubTitle != "")
+         {
+              cout << "\n\t\t\t\t\t\t       " << SubTitle;
+         }
+            cout << "\n\t\t\t\t\t______________________________________\n\n";
 	}
 };
 

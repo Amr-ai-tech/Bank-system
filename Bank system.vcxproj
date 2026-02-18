@@ -130,7 +130,10 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="clsAddNewClintScrean.h" />
     <ClInclude Include="clsBankClient.h" />
+    <ClInclude Include="clsBankOprations.h" />
+    <ClInclude Include="clsClintsListScrean.h" />
     <ClInclude Include="clsMainScrean.h" />
     <ClInclude Include="clsPerson.h" />
     <ClInclude Include="clsScrean.h" />
