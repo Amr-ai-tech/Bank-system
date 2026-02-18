@@ -65,6 +65,7 @@ public:
 	{
 		string account_num;
 		cout << " enter account number " << endl;
+		cin.ignore();
 		getline(cin, account_num);
 		while (!clsBankClient::is_clint_exist(account_num, "file.txt"))
 		{

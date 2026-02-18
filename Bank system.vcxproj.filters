@@ -41,5 +41,8 @@
     <ClInclude Include="clsBankOprations.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="clsDeleteClintScrean.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

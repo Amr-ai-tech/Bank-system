@@ -5,6 +5,7 @@
 #include"clsInput_valid.h"
 #include"clsClintsListScrean.h"
 #include"clsAddNewClintScrean.h"
+#include"clsDeleteClintScrean.h"
 using namespace std;
 class clsMainScrean:protected clsScrean
 {
@@ -42,7 +43,7 @@ private:
 
 	static void _delete_clint()
 	{
-		cout << "code here" << endl;
+		clsDeleteClintScrean::show_delete_clint_screan();
 	}
 
 	static void _update_clint()

@@ -134,6 +134,7 @@
     <ClInclude Include="clsBankClient.h" />
     <ClInclude Include="clsBankOprations.h" />
     <ClInclude Include="clsClintsListScrean.h" />
+    <ClInclude Include="clsDeleteClintScrean.h" />
     <ClInclude Include="clsMainScrean.h" />
     <ClInclude Include="clsPerson.h" />
     <ClInclude Include="clsScrean.h" />
