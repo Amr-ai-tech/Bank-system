@@ -213,7 +213,7 @@ public:
 
 	enum ensavemode { saved, unsaved,newclintadded };
 
-	ensavemode save(string file_n)
+	ensavemode save()
 	{
 		switch (_mode)
 		{
@@ -224,14 +224,14 @@ public:
 		}
 		case _enmode::update:
 		{
-			_update(file_n);
+			_update("file.txt");
 			return ensavemode::saved;
 			break;
 		}
 
 		case _enmode::newclint:
 		{
-			_add_new_clint_to_file(file_n);
+			_add_new_clint_to_file("file.txt");
 			_mode = _enmode::update;
 			return ensavemode::newclintadded;
 			break;

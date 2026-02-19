@@ -6,6 +6,7 @@
 #include"clsClintsListScrean.h"
 #include"clsAddNewClintScrean.h"
 #include"clsDeleteClintScrean.h"
+#include"clsUpdateClintScrean.h"
 using namespace std;
 class clsMainScrean:protected clsScrean
 {
@@ -48,7 +49,7 @@ private:
 
 	static void _update_clint()
 	{
-		cout << "code here" << endl;
+		clsUpdateClintScrean::show_update_clint_screan();
 	}
 
 	static void _find_clint()

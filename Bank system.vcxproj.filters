@@ -44,5 +44,8 @@
     <ClInclude Include="clsDeleteClintScrean.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="clsUpdateClintScrean.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

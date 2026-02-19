@@ -15,7 +15,7 @@ private:
 		string account_num = clsBankOprations::read_new_account_num();
 		clsBankClient clint = clsBankClient::new_clint(account_num);
 		clsBankOprations::read_clint_data(clint);
-		clsBankOprations::saving_chick(clint.save("file.txt"));
+		clsBankOprations::saving_chick(clint.save());
 		clint.Print();
 	}
 

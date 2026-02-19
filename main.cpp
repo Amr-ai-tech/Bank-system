@@ -9,17 +9,6 @@
 #include"clsBankOprations.h"
 using namespace std;
 
-void update_clint()
-{
-	string account_num = clsBankOprations::read_account_num();
-	clsBankClient clint = clsBankClient::find("file.txt", account_num);
-	clint.Print();
-	cout << "\n\n-------------------update clint--------------------\n\n";
-	clsBankOprations::read_clint_data(clint);
-	clsBankOprations::saving_chick(clint.save("file.txt"));
-	clint.Print();
-}
-
 void delet_clint()
 {
 	string account_num = clsBankOprations::read_account_num();

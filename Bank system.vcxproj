@@ -138,6 +138,7 @@
     <ClInclude Include="clsMainScrean.h" />
     <ClInclude Include="clsPerson.h" />
     <ClInclude Include="clsScrean.h" />
+    <ClInclude Include="clsUpdateClintScrean.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
