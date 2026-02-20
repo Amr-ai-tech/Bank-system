@@ -7,7 +7,10 @@
 #include"clsAddNewClintScrean.h"
 #include"clsDeleteClintScrean.h"
 #include"clsUpdateClintScrean.h"
+#include"clsFindClintScrean.h"
+#include"clsTransactionsScreen.h"
 using namespace std;
+
 class clsMainScrean:protected clsScrean
 {
 private:
@@ -24,10 +27,10 @@ private:
 		return enchoise(choise);
 	}
 	
-	static void _return_to_mainmaneu()
+	static void _return_to_main_manue()
 	{
 		cout << "\n\n\n";
-		cout << "\t\t\t\t\tclick in any button to back to main maneu" << endl;
+		cout << "\t\t\t\t\tclick in any button to back to main manue" << endl;
 		system("pause>0");
 		main_meneu();
 	}
@@ -54,12 +57,12 @@ private:
 
 	static void _find_clint()
 	{
-		cout << "code here" << endl;
+		clsFindClintScrean::show_find_clint_screan();
 	}
 
 	static void _transactions()
 	{
-		cout << "code here" << endl;
+		clsTransactionsScreen::show_Transactions_menue();
 	}
 
 	static void _manage_users()
@@ -80,56 +83,56 @@ private:
 			{
 				system("cls");
 				_show_clint_list();
-				_return_to_mainmaneu();
+				_return_to_main_manue();
 			}
 			break;
 			case enchoise::addnewclint:
 			{
 				system("cls");
 				_add_new_clint();
-				_return_to_mainmaneu();
+				_return_to_main_manue();
 			}
 			break;
 			case enchoise::deleteclint:
 			{
 				system("cls");
 				_delete_clint();
-				_return_to_mainmaneu();
+				_return_to_main_manue();
 			}
 			break;
 			case enchoise::updateclint:
 			{
 				system("cls");
 				_update_clint();
-				_return_to_mainmaneu();
+				_return_to_main_manue();
 			}
 			break;
 			case enchoise::findclint:
 			{
 				system("cls");
 				_find_clint();
-				_return_to_mainmaneu();
+				_return_to_main_manue();
 			}
 			break;
 			case enchoise::transactions:
 			{
 				system("cls");
 				_transactions();
-				_return_to_mainmaneu();
+				_return_to_main_manue();
 			}
 			break;
 			case enchoise::manageusers:
 			{
 				system("cls");
 				_manage_users();
-				_return_to_mainmaneu();
+				_return_to_main_manue();
 			}
 			break;
 			case enchoise::logout:
 			{
 				system("cls");
 				_logout();
-				_return_to_mainmaneu();
+				_return_to_main_manue();
 			}
 			break;
 		
@@ -142,7 +145,7 @@ public:
 		system("cls");
 		screan_head("main maneu");
 		cout << setw(37) << left << "\t\t\t\t====================================================" << endl;
-		cout << setw(37) << left << "\t\t\t\t\t\t    main meneu\n";
+		cout << setw(37) << left << "\t\t\t\t\t\t    main menue\n";
 		cout << setw(37) << left << "\t\t====================================================" << endl;
 		cout << setw(37) << left << "\t\t\t\t\t\t[1] Show clint list " << endl;
 		cout << setw(37) << left << "\t\t\t\t\t\t[2] Add new clint  " << endl;

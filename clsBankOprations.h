@@ -69,7 +69,8 @@ public:
 		getline(cin, account_num);
 		while (!clsBankClient::is_clint_exist(account_num, "file.txt"))
 		{
-			cout << "this account is not exist,enter the account number agian" << endl;
+			cout << "the clint ["<<account_num<<"] is not exist " << endl;
+			cout << " enter account number " << endl;
 			account_num = clsInput_valid::Read_String();
 		}
 		return account_num;

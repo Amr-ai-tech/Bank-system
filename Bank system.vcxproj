@@ -135,10 +135,15 @@
     <ClInclude Include="clsBankOprations.h" />
     <ClInclude Include="clsClintsListScrean.h" />
     <ClInclude Include="clsDeleteClintScrean.h" />
+    <ClInclude Include="clsDepositScrean.h" />
+    <ClInclude Include="clsFindClintScrean.h" />
     <ClInclude Include="clsMainScrean.h" />
     <ClInclude Include="clsPerson.h" />
     <ClInclude Include="clsScrean.h" />
+    <ClInclude Include="clsTransactionsScreen.h" />
+    <ClInclude Include="clsT_BalanceScrean.h" />
     <ClInclude Include="clsUpdateClintScrean.h" />
+    <ClInclude Include="clsWithdraw.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

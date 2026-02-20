@@ -275,5 +275,25 @@ public:
 		}
 		return t_b;
 	}
+
+	void Deposit(double amount)
+	{
+		_Balance += amount;
+		save();
+	}
+
+	bool withdraw(double amount)
+	{
+		if (amount > _Balance)
+		{
+			return false;
+		}
+		else
+		{
+			_Balance -= amount;
+			save();
+			return true;
+		}
+	}
 };
 
