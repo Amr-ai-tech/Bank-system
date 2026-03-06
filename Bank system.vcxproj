@@ -131,18 +131,25 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="clsAddNewClintScrean.h" />
+    <ClInclude Include="clsAddNewUserScrean.h" />
     <ClInclude Include="clsBankClient.h" />
     <ClInclude Include="clsBankOprations.h" />
     <ClInclude Include="clsClintsListScrean.h" />
     <ClInclude Include="clsDeleteClintScrean.h" />
+    <ClInclude Include="clsDeleteUserScrean.h" />
     <ClInclude Include="clsDepositScrean.h" />
     <ClInclude Include="clsFindClintScrean.h" />
+    <ClInclude Include="clsFindUser.h" />
     <ClInclude Include="clsMainScrean.h" />
+    <ClInclude Include="clsManageUsersScreen.h" />
     <ClInclude Include="clsPerson.h" />
     <ClInclude Include="clsScrean.h" />
     <ClInclude Include="clsTransactionsScreen.h" />
     <ClInclude Include="clsT_BalanceScrean.h" />
     <ClInclude Include="clsUpdateClintScrean.h" />
+    <ClInclude Include="clsUpdateUserScrean.h" />
+    <ClInclude Include="clsUser.h" />
+    <ClInclude Include="clsUserListScrean.h" />
     <ClInclude Include="clsWithdraw.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

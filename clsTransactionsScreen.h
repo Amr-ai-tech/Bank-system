@@ -28,7 +28,7 @@ private:
 		cout << "\n\n\n";
 		cout << "\t\t\t\t\tclick in any button to back to Transactions manue" << endl;
 		system("pause>0");
-		show_Transactions_menue();
+		show_Transactions_menu();
 	}
 
 	static void _deposit()
@@ -81,17 +81,17 @@ private:
 	}
 
 public:
-	static void show_Transactions_menue()
+	static void show_Transactions_menu()
 	{
 		system("cls");
 		screan_head("Transactions maneu");
 		cout << setw(37) << left << "\t\t\t\t====================================================" << endl;
-		cout << setw(37) << left << "\t\t\t\t\t\t Transactions menue\n";
+		cout << setw(37) << left << "\t\t\t\t\t\t Transactions menu\n";
 		cout << setw(37) << left << "\t\t\t====================================================" << endl;
 		cout << setw(37) << left << "\t\t\t\t\t\t[1] Depoist " << endl;
 		cout << setw(37) << left << "\t\t\t\t\t\t[2] Withdraw  " << endl;
 		cout << setw(37) << left << "\t\t\t\t\t\t[3] Total Blance " << endl;
-		cout << setw(37) << left << "\t\t\t\t\t\t[4] Main Menue " << endl;
+		cout << setw(37) << left << "\t\t\t\t\t\t[4] Main Menu " << endl;
 		cout << setw(37) << left << "\t\t\t\t====================================================" << endl;
 		_Perform_mainmeneu_opretions(_read_user_option());
 	}

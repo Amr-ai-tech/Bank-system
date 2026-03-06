@@ -9,6 +9,7 @@
 #include"clsUpdateClintScrean.h"
 #include"clsFindClintScrean.h"
 #include"clsTransactionsScreen.h"
+#include"clsManageUsersScreen.h"
 using namespace std;
 
 class clsMainScrean:protected clsScrean
@@ -62,12 +63,12 @@ private:
 
 	static void _transactions()
 	{
-		clsTransactionsScreen::show_Transactions_menue();
+		clsTransactionsScreen::show_Transactions_menu();
 	}
 
 	static void _manage_users()
 	{
-		cout << "code here" << endl;
+		clsManageUsersScreen::show_mange_user_screan();
 	}
 
 	static void _logout()
