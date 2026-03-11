@@ -53,11 +53,6 @@ cd Bank-system
 
 3. Run the main file:
 
-```bash
-# Example — adjust based on your language
-python main.py
-```
-
 ---
 
 ## 📂 Project Structure
