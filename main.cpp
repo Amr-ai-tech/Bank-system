@@ -1,8 +1,10 @@
 #include<iostream>
 #include"clsMainScrean.h"
+#include"Global.h"
+#include"clsLoginScrean.h"
 using namespace std;
 
 int main()
 {
-	clsMainScrean::main_meneu();
+	clsLoginScrean::show_login_screan();
 }

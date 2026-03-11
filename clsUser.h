@@ -242,7 +242,7 @@ public:
     {
 
         fstream MyFile;
-        MyFile.open("Users.txt", ios::in);//read Mode
+        MyFile.open("Users.txt", ios::in);
 
         if (MyFile.is_open())
         {
