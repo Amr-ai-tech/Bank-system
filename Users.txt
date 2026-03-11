@@ -1,4 +1,4 @@
-Amr//Mansour//01278818861//mrwm@gmail.com//user1//8102006//-1
-ahmed//mansour//0987654//ahemd@gmail.com//user2//98765//23
-mostafa//mansour//09876//m@gmail.com//user3//3456//1
-ayat//ansour//28765//ar@gmail.com//user4//23//1
+Amr//Mansour//a@gamil.com//0127654//user1//8102006//-1
+ahmed//mohammed//ahemd@gmail.com//0987654//user2//98765//23
+mostafa//ahmed//m@gmail.com//09876//user3//3456//1
+mohamemd//khaled//ar@gmail.com//28765//user4//23//1

@@ -10,7 +10,7 @@ private:
 	string _Phone;
 	string _Email;
 public:
-	clsPerson(string first_name, string last_name, string phone, string email)
+	clsPerson(string first_name, string last_name, string email, string phone)
 	{
 		_First_Name = first_name;
 		_Last_Name = last_name;
