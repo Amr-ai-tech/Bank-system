@@ -32,6 +32,10 @@ private:
 public:
 	static void show_update_clint_screan()
 	{
+		if (!clsScrean::check_right_pirmissions(clsUser::enpirmissions::pupdate_clint))
+		{
+			return;
+		}
 		clsScrean::screan_head("Update clint");
 		_update_clint();
 	}

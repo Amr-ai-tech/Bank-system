@@ -346,6 +346,21 @@ public:
         return _Load_Users_Data_From_File();
     }
 
-
+    bool check_pirmissions(enpirmissions per)
+    {
+        if (this->Permissions == enpirmissions::eAll)
+        {
+            return true;
+        }
+        else
+        {
+            if (this->Permissions & per)
+            {
+                return true;
+            }
+            else
+                return false;
+        }
+    }
 };
 

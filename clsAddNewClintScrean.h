@@ -22,6 +22,10 @@ private:
 public:
 	static void show_add_new_clint()
 	{
+		if (!clsScrean::check_right_pirmissions(clsUser::enpirmissions::padd_new_clint))
+		{
+			return;
+		}
 		clsScrean::screan_head("Add new clint");
 		_add_new_clint();
 	}

@@ -31,10 +31,14 @@ private:
 public:
 	static void show_login_screan()
 	{
-		system("cls");
-		clsScrean::screan_head("Login screan");
-		_login();
-		clsMainScrean::main_meneu();
+		while (true)
+		{
+			system("cls");
+			clsScrean::screan_head("Login screan");
+			_login();
+			clsMainScrean::main_meneu();
+			cin.ignore();
+		}
 	}
 
 };

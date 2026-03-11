@@ -12,6 +12,10 @@ private:
 public:
 	static void show_find_clint_screan()
 	{
+		if (!clsScrean::check_right_pirmissions(clsUser::enpirmissions::pfind_clint))
+		{
+			return;
+		}
 		clsScrean::screan_head("Find clint ");
 		string account_num = clsBankOprations::read_account_num();
 		clsBankClient clint = clsBankClient::find("file.txt", account_num);

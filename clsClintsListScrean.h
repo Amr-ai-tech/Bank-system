@@ -32,6 +32,10 @@ private:
 public:
 	 static void show_clint_list()
 	{
+		 if (!clsScrean::check_right_pirmissions(clsUser::enpirmissions::plist_clint))
+		 {
+			 return;
+		 }
 		vector<clsBankClient>list = clsBankClient::get_clints("file.txt");
 		clsScrean::screan_head("Clint list screan" , "(" + to_string(list.size()) + ") clint(s)");
 		_clints_list(list);

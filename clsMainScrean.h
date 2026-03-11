@@ -10,6 +10,7 @@
 #include"clsFindClintScrean.h"
 #include"clsTransactionsScreen.h"
 #include"clsManageUsersScreen.h"
+#include"Global.h"
 using namespace std;
 
 class clsMainScrean:protected clsScrean
@@ -73,7 +74,7 @@ private:
 
 	static void _logout()
 	{
-		cout << "code here" << endl;
+		current_user = clsUser::Find("", "");
 	}
 
 	static void _Perform_mainmeneu_opretions(enchoise choise)
@@ -133,7 +134,6 @@ private:
 			{
 				system("cls");
 				_logout();
-				_return_to_main_manue();
 			}
 			break;
 		
@@ -145,6 +145,7 @@ public:
 	{                 
 		system("cls");
 		screan_head("main maneu");
+		cout << "\n\t\t\t\t\t\t  Welcome " << current_user.First_Name << " :)\n\n";
 		cout << setw(37) << left << "\t\t\t\t====================================================" << endl;
 		cout << setw(37) << left << "\t\t\t\t\t\t    main menue\n";
 		cout << setw(37) << left << "\t\t====================================================" << endl;

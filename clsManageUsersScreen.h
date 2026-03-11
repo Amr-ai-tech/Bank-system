@@ -110,6 +110,10 @@ private:
 public:
 	static void show_mange_user_screan()
 	{
+		if (!clsScrean::check_right_pirmissions(clsUser::enpirmissions::pmange_users))
+		{
+			return;
+		}
 		system("cls");
 		screan_head("mange users menu");
 		cout << setw(37) << left << "\t\t\t\t====================================================" << endl;

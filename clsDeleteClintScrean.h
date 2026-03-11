@@ -32,6 +32,10 @@ private:
 public:
 	static void show_delete_clint_screan()
 	{
+		if (!clsScrean::check_right_pirmissions(clsUser::enpirmissions::pdelete_clint))
+		{
+			return;
+		}
 		clsScrean::screan_head("Delete clint");
 		_delete_clint();
 	}

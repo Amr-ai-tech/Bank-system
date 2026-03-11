@@ -83,6 +83,10 @@ private:
 public:
 	static void show_Transactions_menu()
 	{
+		if (!clsScrean::check_right_pirmissions(clsUser::enpirmissions::ptransactions))
+		{
+			return;
+		}
 		system("cls");
 		screan_head("Transactions maneu");
 		cout << setw(37) << left << "\t\t\t\t====================================================" << endl;
