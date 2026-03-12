@@ -145,7 +145,6 @@ public:
 	{                 
 		system("cls");
 		screan_head("main maneu");
-		cout << "\n\t\t\t\t\t\t  Welcome " << current_user.First_Name << " :)\n\n";
 		cout << setw(37) << left << "\t\t\t\t====================================================" << endl;
 		cout << setw(37) << left << "\t\t\t\t\t\t    main menue\n";
 		cout << setw(37) << left << "\t\t====================================================" << endl;

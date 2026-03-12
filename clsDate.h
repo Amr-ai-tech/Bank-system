@@ -105,6 +105,22 @@ public:
 		return clsDate(Day, Month, Year);
 	}
 
+	static string get_system_time()
+	{
+		string s_time = "";
+		time_t t = time(0);
+		tm* td = localtime(&t);
+		s_time += to_string(td->tm_hour) + ":";
+		s_time += to_string(td->tm_min) + ":";
+		s_time += to_string(td->tm_sec);
+		return s_time;
+	}
+
+	static string full_date()
+	{
+		return DateToString(GetSystemDate()) + " - " + get_system_time();
+	}
+
 	static	bool IsValidDate(clsDate Date)
 	{
 

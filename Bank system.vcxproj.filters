@@ -89,5 +89,8 @@
     <ClInclude Include="clsLoginScrean.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="clslogin_reg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
