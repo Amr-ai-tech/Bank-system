@@ -92,6 +92,12 @@ private:
 		{
 			p += clsUser::pmange_users;
 		}
+		cout << "show login regester";
+		cin >> answar;
+		if (answar == 'y' || answar == 'Y')
+		{
+			p += clsUser::ploginr;
+		}
 		return p;
 	}
 

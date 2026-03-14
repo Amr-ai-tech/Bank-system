@@ -10,19 +10,19 @@ using namespace std;
 class clsLoginRegisterScrean:protected clsScrean
 {
 private:
-	static void _print_login_record(clslogin_reg& rec)
+	static void _print_login_record(clslogin_reg::strecord& rec)
 	{
-		cout << "\t"<<"   |" << setw(24) << left << rec.get_date() << " | " << setw(16) << left << rec.get_user_name() << " | " << setw(14) << left << rec.get_password() << " | "  << setw(12) << left << rec.get_permissions() << endl;
+		cout << "\t"<<"   |" << setw(24) << left << rec._data << " | " << setw(16) << left << rec._user_name << " | " << setw(14) << left << rec._password << " | "  << setw(12) << left << rec._per << endl;
 	}
 
-	static void _login_hes(vector<clslogin_reg>hes)
+	static void _login_hes(vector<clslogin_reg::strecord>hes)
 	{
 		cout << "\t--------------------------------------------------------------------------------" << endl;
 		cout << "\t\t"<<setw(20) << left << "Login date " << " | " << setw(16) << left << "User name " << " | " << setw(14) << left << "Password " << " | " << setw(12) << left << "Permissions " << endl;
 		cout << "\t--------------------------------------------------------------------------------" << endl;
 		if (hes.size() > 0)
 		{
-			for (clslogin_reg rec : hes)
+			for (clslogin_reg::strecord rec : hes)
 			{
 				_print_login_record(rec);
 			}
