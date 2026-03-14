@@ -10,7 +10,7 @@ using namespace std;
 class clsLoginRegisterScrean:protected clsScrean
 {
 private:
-	static void _print_login_record(clslogin_reg rec)
+	static void _print_login_record(clslogin_reg& rec)
 	{
 		cout << "\t"<<"   |" << setw(24) << left << rec.get_date() << " | " << setw(16) << left << rec.get_user_name() << " | " << setw(14) << left << rec.get_password() << " | "  << setw(12) << left << rec.get_permissions() << endl;
 	}
