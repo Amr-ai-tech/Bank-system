@@ -140,6 +140,7 @@
     <ClInclude Include="clsDepositScrean.h" />
     <ClInclude Include="clsFindClintScrean.h" />
     <ClInclude Include="clsFindUser.h" />
+    <ClInclude Include="clsLoginRegisterScrean.h" />
     <ClInclude Include="clsLoginScrean.h" />
     <ClInclude Include="clslogin_reg.h" />
     <ClInclude Include="clsMainScrean.h" />

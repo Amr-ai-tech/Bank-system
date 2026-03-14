@@ -10,6 +10,7 @@
 #include"clsFindClintScrean.h"
 #include"clsTransactionsScreen.h"
 #include"clsManageUsersScreen.h"
+#include"clsLoginRegisterScrean.h"
 #include"Global.h"
 using namespace std;
 
@@ -19,13 +20,13 @@ private:
 	enum enchoise
 	{
 		showclintlist=1,addnewclint,deleteclint,updateclint,
-		findclint, transactions,manageusers,logout
+		findclint, transactions,manageusers,loginr,logout
 	};
 
 	static enchoise _read_user_option()
 	{
-		cout << "\t\t\t\t\tchoose what do you want to do [1,8]: ";
-		int choise = clsInput_valid::Read_Int_Number_Between(1, 8, "\t\t\tThe choise is not found , please choose from the above choises :");
+		cout << "\t\t\t\t\tchoose what do you want to do [1,9]: ";
+		int choise = clsInput_valid::Read_Int_Number_Between(1, 9, "\t\t\tThe choise is not found , please choose from the above choises :");
 		return enchoise(choise);
 	}
 	
@@ -70,6 +71,11 @@ private:
 	static void _manage_users()
 	{
 		clsManageUsersScreen::show_mange_user_screan();
+	}
+
+	static void _login_reg()
+	{
+		clsLoginRegisterScrean::show_register_screan();
 	}
 
 	static void _logout()
@@ -130,6 +136,13 @@ private:
 				_return_to_main_manue();
 			}
 			break;
+			case enchoise::loginr:
+			{
+				system("cls");
+				_login_reg();
+				_return_to_main_manue();
+			}
+			break;
 			case enchoise::logout:
 			{
 				system("cls");
@@ -155,7 +168,8 @@ public:
 		cout << setw(37) << left << "\t\t\t\t\t\t[5] Find clint " << endl;
 		cout << setw(37) << left << "\t\t\t\t\t\t[6] Transactions " << endl;
 		cout << setw(37) << left << "\t\t\t\t\t\t[7] Manage users " << endl;
-		cout << setw(37) << left << "\t\t\t\t\t\t[8] Logout " << endl;
+		cout << setw(37) << left << "\t\t\t\t\t\t[8] Login Register " << endl;
+		cout << setw(37) << left << "\t\t\t\t\t\t[9] Logout " << endl;
 		cout << setw(37) << left << "\t\t\t\t====================================================" << endl;
 		_Perform_mainmeneu_opretions(_read_user_option());
 	}

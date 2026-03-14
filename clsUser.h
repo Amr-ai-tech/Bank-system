@@ -154,7 +154,7 @@ public:
     enum enpirmissions
     {
         eAll = -1, plist_clint = 1, padd_new_clint = 2, pdelete_clint = 4, pupdate_clint = 8,
-        pfind_clint = 16, ptransactions = 32, pmange_users = 64
+        pfind_clint = 16, ptransactions = 32, pmange_users = 64, ploginr = 128
     };
 
     clsUser(enMode Mode, string FirstName, string LastName,

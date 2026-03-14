@@ -92,5 +92,8 @@
     <ClInclude Include="clslogin_reg.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="clsLoginRegisterScrean.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
