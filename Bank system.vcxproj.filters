@@ -95,5 +95,8 @@
     <ClInclude Include="clsLoginRegisterScrean.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="clsTransferScrean.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

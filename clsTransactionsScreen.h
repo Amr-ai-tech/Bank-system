@@ -6,6 +6,7 @@
 #include"clsDepositScrean.h"
 #include"clsWithdraw.h"
 #include"clsT_BalanceScrean.h"
+#include"clsTransferScrean.h"
 using namespace std;
 
 class clsTransactionsScreen :protected clsScrean
@@ -13,13 +14,13 @@ class clsTransactionsScreen :protected clsScrean
 private:
 	enum enchoise
 	{
-		dipoist = 1, withdraw, T_balance, mainmenue
+		dipoist = 1, withdraw, T_balance, transfer, mainmenue
 	};
 
 	static enchoise _read_user_option()
 	{
-		cout << "\t\t\t\t\tchoose what do you want to do [1,4]: ";
-		int choise = clsInput_valid::Read_Int_Number_Between(1, 4, "\t\t\tThe choise is not found , please choose from the above choises :");
+		cout << "\t\t\t\t\tchoose what do you want to do [1,5]: ";
+		int choise = clsInput_valid::Read_Int_Number_Between(1, 5, "\t\t\tThe choise is not found , please choose from the above choises :");
 		return enchoise(choise);
 	}
 
@@ -44,6 +45,11 @@ private:
 	static void _total_blance()
 	{
 		clsT_BalanceScrean::show_total_balance_screan();
+	}
+
+	static void _transfer()
+	{
+		clsTransferScrean::show_transfer_screan();
 	}
 
 	static void _Perform_mainmeneu_opretions(enchoise choise)
@@ -71,6 +77,13 @@ private:
 			_return_to_Transactions_manue();
 		}
 		break;
+		case enchoise::transfer:
+		{
+			system("cls");
+			_transfer();
+			_return_to_Transactions_manue();
+		}
+		break;
 		case enchoise::mainmenue:
 		{
 			
@@ -95,7 +108,8 @@ public:
 		cout << setw(37) << left << "\t\t\t\t\t\t[1] Depoist " << endl;
 		cout << setw(37) << left << "\t\t\t\t\t\t[2] Withdraw  " << endl;
 		cout << setw(37) << left << "\t\t\t\t\t\t[3] Total Blance " << endl;
-		cout << setw(37) << left << "\t\t\t\t\t\t[4] Main Menu " << endl;
+		cout << setw(37) << left << "\t\t\t\t\t\t[4] Transfer " << endl;
+		cout << setw(37) << left << "\t\t\t\t\t\t[5] Main Menu " << endl;
 		cout << setw(37) << left << "\t\t\t\t====================================================" << endl;
 		_Perform_mainmeneu_opretions(_read_user_option());
 	}

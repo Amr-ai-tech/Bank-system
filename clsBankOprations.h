@@ -53,7 +53,7 @@ public:
 		cout << "Enter account number of clint that you want to add " << endl;
 		cin.ignore();
 		string account_num = clsInput_valid::Read_String();
-		while (clsBankClient::is_clint_exist(account_num, "file.txt"))
+		while (clsBankClient::is_clint_exist(account_num))
 		{
 			cout << "this clint is exist , please enter another account number" << endl;
 			account_num = clsInput_valid::Read_String();
@@ -67,7 +67,7 @@ public:
 		cout << " enter account number " << endl;
 		cin.ignore();
 		getline(cin, account_num);
-		while (!clsBankClient::is_clint_exist(account_num, "file.txt"))
+		while (!clsBankClient::is_clint_exist(account_num))
 		{
 			cout << "the clint ["<<account_num<<"] is not exist " << endl;
 			cout << " enter account number " << endl;

@@ -30,12 +30,12 @@ private:
 		return clsBankClient (_enmode::empty,"", "", 0, "", "", "", "");
 	}
 
-	static vector<clsBankClient>_Load_clints_from_file(string file_n)
+	static vector<clsBankClient>_Load_clints_from_file()
 	{
 		vector<clsBankClient>vec;
 		string text;
 		fstream file;
-		file.open(file_n, ios::in);
+		file.open("clint.txt", ios::in);
 		if (file.is_open())
 		{
 			while (getline(file, text))
@@ -62,10 +62,10 @@ private:
 		return s;
 	}
 
-	void _load_clints_to_file(vector<clsBankClient>vec,string file_n)
+	void _load_clints_to_file(vector<clsBankClient>vec)
 	{
 		fstream file;
-		file.open(file_n, ios::out);
+		file.open("clint.txt", ios::out);
 		if (file.is_open())
 		{
 			for (clsBankClient clint : vec)
@@ -79,9 +79,9 @@ private:
 		file.close();
 	}
 
-	void _update(string file_n)
+	void _update()
 	{
-		vector<clsBankClient>vec = _Load_clints_from_file(file_n);
+		vector<clsBankClient>vec = _Load_clints_from_file();
 		for (clsBankClient& clint : vec)
 		{
 			if (clint.get_account_number() == _Account_Number)
@@ -89,13 +89,13 @@ private:
 				clint = *this;
 			}
 		}
-		_load_clints_to_file(vec,file_n);
+		_load_clints_to_file(vec);
 	}
 
-	void _add_new_clint_to_file(string filen)
+	void _add_new_clint_to_file()
 	{
 		fstream file;
-		file.open(filen, ios::app);
+		file.open("clint.txt", ios::app);
 		if (file.is_open())
 		{
 			file << _convert_obj_to_text(*this) << endl;
@@ -161,12 +161,12 @@ public:
 		return (_mode == _enmode::empty);
 	}
 
-	static clsBankClient find(string filen,string account_num)
+	static clsBankClient find(string account_num)
 	{
 		clsBankClient clint(_enmode::empty,"","",0,"","","","");
 		string text;
 		fstream file;
-		file.open(filen, ios::in);
+		file.open("clint.txt", ios::in);
 		if (file.is_open())
 		{
 			while (getline(file, text))
@@ -183,12 +183,12 @@ public:
 		}
 	}
 
-	static clsBankClient find(string filen, string account_num, string pinc)
+	static clsBankClient find(string account_num, string pinc)
 	{
 		clsBankClient clint(_enmode::empty, "", "", 0, "", "", "", "");
 		string text;
 		fstream file;
-		file.open(filen, ios::in);
+		file.open("clint.txt", ios::in);
 		if (file.is_open())
 		{
 			while (getline(file, text))
@@ -205,9 +205,9 @@ public:
 		}
 	}
 
-	static bool is_clint_exist(string acc_num,string file)
+	static bool is_clint_exist(string acc_num)
 	{
-		clsBankClient clint = find(file, acc_num);
+		clsBankClient clint = find("clint.txt", acc_num);
 		return (!clint.is_empty());
 	}
 
@@ -224,14 +224,14 @@ public:
 		}
 		case _enmode::update:
 		{
-			_update("file.txt");
+			_update();
 			return ensavemode::saved;
 			break;
 		}
 
 		case _enmode::newclint:
 		{
-			_add_new_clint_to_file("file.txt");
+			_add_new_clint_to_file();
 			_mode = _enmode::update;
 			return ensavemode::newclintadded;
 			break;
@@ -247,7 +247,7 @@ public:
 
 	void Delete()
 	{
-		vector<clsBankClient>clints = _Load_clints_from_file("file.txt");
+		vector<clsBankClient>clints = _Load_clints_from_file();
 		for (clsBankClient& clint : clints)
 		{
 			if (clint.get_account_number() == _Account_Number)
@@ -256,18 +256,18 @@ public:
 				break;
 			}
 		}
-		_load_clints_to_file(clints, "file.txt");
+		_load_clints_to_file(clints);
 		*this = _empty_obj();
 	}
 
-	static vector<clsBankClient> get_clints(string file_name)
+	static vector<clsBankClient> get_clints()
 	{
-		return _Load_clints_from_file(file_name);
+		return _Load_clints_from_file();
 	}
 
-	static double total_balnce(string file_name)
+	static double total_balnce()
 	{ 
-		vector<clsBankClient>clints = _Load_clints_from_file(file_name);
+		vector<clsBankClient>clints = _Load_clints_from_file();
 		double t_b=0.0;
 		for (clsBankClient clint : clints)
 		{

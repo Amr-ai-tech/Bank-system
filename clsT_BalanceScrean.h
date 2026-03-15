@@ -16,7 +16,7 @@ private:
 
 	static void _Balance_list(vector<clsBankClient>list)
 	{
-		double total_balnce = clsBankClient::total_balnce("file.txt");
+		double total_balnce = clsBankClient::total_balnce();
 		cout << "\n\t\t\t\t\tBalance list \n" << endl;
 		cout << "------------------------------------------------------------------------------------------" << endl;
 		cout << setw(30) << left << "Account number " << " | " << setw(28) << left << "Clint name " << " | " << setw(24) << left << "Balance " << endl;
@@ -36,7 +36,7 @@ private:
 public:
 	static void show_total_balance_screan()
 	{
-		vector<clsBankClient>list = clsBankClient::get_clints("file.txt");
+		vector<clsBankClient>list = clsBankClient::get_clints();
 		clsScrean::screan_head("Total Balance ", "(" + to_string(list.size()) + ") clint(s)");
 		_Balance_list(list);
 	}

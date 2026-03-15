@@ -89,11 +89,9 @@ private:
             for (clsUser U : vUsers)
             {
                 if (U.Marked_For_Deleted() == false)
-                {
-                    //we only write records that are not marked for delete.  
+                {  
                     DataLine = _Conver_User_Object_To_Line(U);
                     MyFile << DataLine << endl;
-
                 }
 
             }

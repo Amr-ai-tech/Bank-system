@@ -36,7 +36,7 @@ public:
 		 {
 			 return;
 		 }
-		vector<clsBankClient>list = clsBankClient::get_clints("file.txt");
+		vector<clsBankClient>list = clsBankClient::get_clints();
 		clsScrean::screan_head("Clint list screan" , "(" + to_string(list.size()) + ") clint(s)");
 		_clints_list(list);
 	}
