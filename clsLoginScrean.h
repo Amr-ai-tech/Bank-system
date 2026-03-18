@@ -4,7 +4,7 @@
 #include"clsScrean.h"
 #include"clsInput_valid.h"
 #include"clsMainScrean.h"
-#include"clslogin_reg.h"
+#include"Register_Service.h"
 using namespace std;
 
 class clsLoginScrean:protected clsScrean 
@@ -37,7 +37,7 @@ private:
 			faild_login = current_user.IsEmpty();
 			if (!faild_login)
 			{
-				clslogin_reg::login_register();
+				Register_Service::Register();
 			}
 		} while (faild_login);
 		return true;

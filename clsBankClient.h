@@ -19,9 +19,9 @@ private:
 
 	static clsBankClient _convert_text_to_object(string text,string sp="//")
 	{
-		vector<string>data;
-		data = clsString::Split(text, sp);
-		return (clsBankClient(_enmode::update,data[4], data[5], stod(data[6]) , data[0], data[1], data[2], data[3]));
+		vector<string>date;
+		date = clsString::Split(text, sp);
+		return (clsBankClient(_enmode::update,date[4], date[5], stod(date[6]) , date[0], date[1], date[2], date[3]));
 
 	}
 

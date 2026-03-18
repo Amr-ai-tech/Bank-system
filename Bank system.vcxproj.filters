@@ -89,13 +89,16 @@
     <ClInclude Include="clsLoginScrean.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="clslogin_reg.h">
+    <ClInclude Include="Register_Service.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="clsLoginRegisterScrean.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="clsTransferScrean.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="clsTransferLogScrean.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

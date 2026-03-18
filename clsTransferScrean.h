@@ -3,6 +3,7 @@
 #include"clsScrean.h"
 #include"clsBankClient.h"
 #include"clsInput_valid.h"
+#include"Register_Service.h"
 using namespace std;
 class clsTransferScrean:protected clsScrean 
 {
@@ -34,6 +35,7 @@ private:
 		{
 			first_clint.withdraw(amount);
 			secound_clint.Deposit(amount);
+			Register_Service::Register(first_clint, secound_clint, amount);
 		}
 	}
 

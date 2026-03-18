@@ -142,7 +142,8 @@
     <ClInclude Include="clsFindUser.h" />
     <ClInclude Include="clsLoginRegisterScrean.h" />
     <ClInclude Include="clsLoginScrean.h" />
-    <ClInclude Include="clslogin_reg.h" />
+    <ClInclude Include="clsTransferLogScrean.h" />
+    <ClInclude Include="Register_Service.h" />
     <ClInclude Include="clsMainScrean.h" />
     <ClInclude Include="clsManageUsersScreen.h" />
     <ClInclude Include="clsPerson.h" />

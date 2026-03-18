@@ -4,25 +4,25 @@
 #include<iomanip>
 #include"clsScrean.h"
 #include"Global.h"
-#include"clslogin_reg.h"
+#include"Register_Service.h"
 using namespace std;
 
 class clsLoginRegisterScrean:protected clsScrean
 {
 private:
-	static void _print_login_record(clslogin_reg::strecord& rec)
+	static void _print_login_record(Register_Service::strecord& rec)
 	{
-		cout << "\t"<<"   |" << setw(24) << left << rec._data << " | " << setw(16) << left << rec._user_name << " | " << setw(14) << left << rec._password << " | "  << setw(12) << left << rec._per << endl;
+		cout << "\t"<<"   |" << setw(24) << left << rec.date << " | " << setw(16) << left << rec.user_name << " | " << setw(14) << left << rec.password << " | "  << setw(12) << left << rec.per << endl;
 	}
 
-	static void _login_hes(vector<clslogin_reg::strecord>hes)
+	static void _login_hes(vector<Register_Service::strecord>hes)
 	{
 		cout << "\t--------------------------------------------------------------------------------" << endl;
 		cout << "\t\t"<<setw(20) << left << "Login date " << " | " << setw(16) << left << "User name " << " | " << setw(14) << left << "Password " << " | " << setw(12) << left << "Permissions " << endl;
 		cout << "\t--------------------------------------------------------------------------------" << endl;
 		if (hes.size() > 0)
 		{
-			for (clslogin_reg::strecord rec : hes)
+			for (Register_Service::strecord rec : hes)
 			{
 				_print_login_record(rec);
 			}
@@ -41,7 +41,7 @@ public:
 		}
 
 		clsScrean::screan_head("Login Register List Screen");
-		_login_hes(clslogin_reg::get_login_hestory());
+		_login_hes(Register_Service::get_login_hestory());
 	}
 
 };
