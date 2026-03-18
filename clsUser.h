@@ -5,7 +5,7 @@
 #include "clsString.h"
 #include <vector>
 #include <fstream>
-
+#include"Utility.h"
 using namespace std;
 class clsUser : public clsPerson
 {
@@ -25,7 +25,7 @@ private:
         vUserData = clsString::Split(Line, Seperator);
 
         return clsUser(enMode::UpdateMode, vUserData[0], vUserData[1], vUserData[2],
-            vUserData[3], vUserData[4], vUserData[5], stoi(vUserData[6]));
+            vUserData[3], vUserData[4], Utility::Decrypt_Text( vUserData[5]), stoi(vUserData[6]));
 
     }
 
@@ -38,7 +38,7 @@ private:
         UserRecord += User.Email + Seperator;
         UserRecord += User.Phone + Seperator;
         UserRecord += User.User_Name + Seperator;
-        UserRecord += User.Password + Seperator;
+        UserRecord += Utility::Encrypt_Text( User.Password )+ Seperator;
         UserRecord += to_string(User.Permissions);
 
         return UserRecord;

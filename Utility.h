@@ -220,18 +220,16 @@ public:
 
 	static string Encrypt_Text(string text)
 	{
-		for (int i = 0; i < text.length(); i++)
-		{
-			text[i] = char(int(text[i]) + 2);
+		for (int i = 0; i < text.size(); i++) {
+			text[i] = ((text[i] - '0' + 2) % 10) + '0';
 		}
 		return text;
 	}
 
 	static string Decrypt_Text(string text)
 	{
-		for (int i = 0; i < text.length(); i++)
-		{
-			text[i] = char(int(text[i]) - 2);
+		for (int i = 0; i < text.size(); i++) {
+			text[i] = ((text[i] - '0' - 2 + 10) % 10) + '0';
 		}
 		return text;
 	}

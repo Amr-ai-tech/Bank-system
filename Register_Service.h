@@ -36,7 +36,7 @@ private:
 		string line = "";
 		line += clsDate::full_date() + delim;
 		line += current_user.User_Name + delim;
-		line += current_user.Password + delim;
+		line += Utility::Encrypt_Text( current_user.Password ) + delim;
 		line += to_string(current_user.Permissions);
 		return line;
 	}
@@ -72,7 +72,7 @@ private:
 		vector<string>vrecord = clsString::Split(line,"//");
 		record.date = vrecord[0];
 		record.user_name = vrecord[1];
-		record.password = vrecord[2];
+		record.password = Utility::Decrypt_Text( vrecord[2]);
 		record.per = stoi(vrecord[3]);
 		return record;
 	}
