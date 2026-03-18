@@ -1,57 +1,83 @@
+
+---
+
 # 🏦 Bank System
 
-> ⚠️ **Work in Progress** — This project is still under development and not yet complete.
+> ⚠️ **Completed Project** — A fully functional banking simulation with secure transactions and user management.
+
+---
 
 ## 📌 Overview
 
-**Bank System** is a simple banking simulation project built for learning and practicing core programming concepts and **Object-Oriented Programming (OOP)**.
+**Bank System** is a realistic banking simulation designed to practice **Object-Oriented Programming (OOP)** and core programming concepts.
 
-The system currently supports basic banking operations such as account creation, deposits, and withdrawals, with a focus on clean logic and code structure.
+It includes advanced features such as **user management, secure transactions, activity logging, and access control**, providing a complete banking experience for both administrators and clients.
 
 ---
 
 ## 🎯 Project Goals
 
-* Apply OOP concepts in a practical project
-* Understand basic banking workflows
-* Improve problem-solving skills
-* Practice writing clean and organized code
+* 🧠 Apply OOP concepts in a practical project
+* 🏦 Understand real-world banking workflows
+* 🔒 Implement secure operations and user permissions
+* 📊 Track user activity and transaction history
 
 ---
 
-## ⚙️ Features (Current)
+## ⚙️ Features
 
-* ✅ Create bank account
-* ✅ View account details
-* ✅ Deposit money
-* ✅ Withdraw money
-* 🚧 Money transfer (in progress)
-* 🚧 More improvements coming soon
+### 💳 Account Management
+
+* ✅ Create, view, update, and delete bank accounts
+* ✅ Deposit and withdraw money
+* ✅ Transfer money between accounts
+
+### 👤 User Management
+
+* ✅ Add, update, view, and remove bank users (administrators)
+* ✅ Assign user permissions to control access
+* ✅ Login and logout system with **3-attempt limit**
+
+### 📂 Activity Logging
+
+* ✅ Track user login times
+* ✅ Record all transactions and money transfers
+* ✅ View login history and transaction history
+
+### 🔒 Security
+
+* ✅ Passwords are **encrypted** in files
+* ✅ Access is restricted based on user permissions
 
 ---
 
 ## 🧱 Built With
 
-* Programming Language: **(C++)**
-* Paradigm: Object-Oriented Programming (OOP)
+* **C++** — Object-Oriented Programming (OOP)
 
 ---
 
 ## 🚀 How to Run
 
-1. Clone the repository:
+1. **Clone the repository:**
 
 ```bash
 git clone https://github.com/Amr-ai-tech/Bank-system.git
 ```
 
-2. Navigate to the project folder:
+2. **Navigate to the project folder:**
 
 ```bash
 cd Bank-system
 ```
 
-3. Run the main file:
+3. **Run the main program:**
+
+```bash
+./main   # Or use your IDE/compiler to execute
+```
+
+> ⚠️ Ensure your environment supports C++ compilation and file read/write access.
 
 ---
 
@@ -60,24 +86,24 @@ cd Bank-system
 ```
 Bank-system/
 │
-├── (source files)
-├── (classes)
-└── main file
+├── Source files
+├── Classes (Accounts, Users, Transactions)
+├── Main program
+└── Data files (encrypted passwords, logs, transactions)
 ```
-
-> ⚠️ Structure may change as the project evolves.
 
 ---
 
-## 📊 Current Status
+## 📊 Project Status
 
-This project is part of my learning journey. The main goal is to strengthen my understanding of programming fundamentals and OOP before moving to more advanced topics.
+✅ **Completed**: Full banking simulation with secure login, user permissions, and activity logging.
+The project is ready for use and demonstrates a complete OOP-based banking workflow.
 
 ---
 
 ## 🤝 Contributing
 
-Feedback and suggestions are welcome.
+Suggestions and feedback are welcome to enhance features or usability.
 
 ---
 
@@ -85,3 +111,4 @@ Feedback and suggestions are welcome.
 
 **Amr**
 
+---
